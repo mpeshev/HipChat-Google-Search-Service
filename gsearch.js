@@ -44,7 +44,7 @@ app.post('/', function( req, res ) {
 			topRecord = resultSet.responseData.results[0];
 
 			// Get the URL and Title
-			var resultUrl = topRecord.url;
+			var resultUrl = decodeURIComponent( topRecord.url );
 			var resultTitle = topRecord.titleNoFormatting;
 
 			// Send a HipChat request with the result
